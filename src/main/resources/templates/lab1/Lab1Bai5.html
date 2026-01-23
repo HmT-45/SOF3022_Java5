@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lab1 Bai 5</title>
+</head>
+<body>
+    <form action="/lab1bai5/result" method="post">
+<!--        nhap chieu dai hcn-->
+        <label for="chieudai">Chiều dài HCN:</label><br>
+        <input type="number" id="chieudai" name="chieudai" required min="0">
+        <br><br>
+<!--        nhap chieu rong hcn-->
+        <label for="chieurong">Chiều rộng HCN</label><br>
+        <input type="number" id="chieurong" name="chieurong" required min="0">
+        <br><br>
+<!--        button-->
+        <button type="submit">Cho ra kết quả</button>
+<!--        output-->
+        <div th:if="${chuvi != null}">
+            <h1 style="color: blue">Diện tích HCN là: <span th:text="${dientich}"></span></h1>
+            <h1 style="color: blue">Chu vi HCN là: <span th:text="${chuvi}"></span></h1>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+package web.shop.lab3;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
+
+@Controller
+public class Bai5_listController {
+    @RequestMapping("/bai5-staff/list")
+    public String list(Model model) {
+        List<Bai1_Staff> list = List.of(
+                Bai1_Staff.builder().id("user1@gmail.com").fullname("nguyễn văn user1").level(0).build(),
+                Bai1_Staff.builder().id("user2@gmail.com").fullname("nguyễn văn user2").level(1).build(),
+                Bai1_Staff.builder().id("user3@gmail.com").fullname("nguyễn văn user3").level(2).build(),
+                Bai1_Staff.builder().id("user4@gmail.com").fullname("nguyễn văn user4").level(2).build(),
+                Bai1_Staff.builder().id("user5@gmail.com").fullname("nguyễn văn user5").level(1).build(),
+                Bai1_Staff.builder().id("user6@gmail.com").fullname("nguyễn văn user6").level(0).build()
+        );
+        model.addAttribute("list", list);
+        return "/lab3/bai5_list";
+    }
+}

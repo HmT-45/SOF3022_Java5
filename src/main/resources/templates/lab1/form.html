@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 1 Bài 4</title>
+</head>
+<body>
+
+    <form action="/login/check" method="post">
+<!--        tên người dùng-->
+        <label for="username">Tên người dùng:</label><br>
+        <input type="text" id="username" name="username" required>
+        <br><br>
+<!--        mật khẩu-->
+        <label for="password">Mật khẩu:</label><br>
+        <input type="password" id="password" name="password" required>
+        <br> <br>
+<!--        button-->
+        <button type="submit">Đăng nhập</button>
+<!--        thong bao trang thai-->
+        <h1 style="color:blue" th:text="${message}"></h1>
+        <h1 th:text="${hello}"></h1>
+    </form>
+</body>
+</html>

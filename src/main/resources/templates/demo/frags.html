@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 th:fragments="frag1">Fragment 1</h1>
+    <h2 th:fragments="frag2">Fragment 2</h2>
+    <div th:fragment="frag(x,y)">
+        <div th:replace="${x}"></div>
+        <hr>
+        <div th:replace="${y}"></div>
+
+    </div>
+</body>
+</html>
