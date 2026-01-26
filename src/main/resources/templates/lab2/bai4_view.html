@@ -5,32 +5,32 @@
     <title>Title</title>
 </head>
 <body>
-  <form action="/productbai4/save" method="post" th:object="${product}">
-<!--    input tên giá sản phẩm-->
+<form action="/productbai4/save" method="post" th:object="${product}">
+    <!--    input tên giá sản phẩm-->
     <label>Nhập tên sản phẩm: <br>
-      <input name="name" th:value="*{name}">
+        <input name="name" th:value="*{name}">
     </label>
     <br>
     <label>Nhập giá sản phẩm: <br>
-      <input name="price" th:value="*{price}">
-      </label>
-      <br><br>
-      <button>Save</button>
-      </form>
-      <ul>
-          <li>Tên sản phẩm 1: <span th:text="${product.name}"></span></li>
-          <li>Giá sản phẩm 1: <span th:text="${product.price}"></span></li>
-      </ul>
-      <ul th:object ="${product}">
-          <li>Tên sản phẩm 2: <span th:text="*{name}"></span></li>
-          <li>Giá sản phẩm 2: <span th:text="*{price}"></span></li>
-      </ul>
-      <ul>
+        <input name="price" th:value="*{price}">
+    </label>
+    <br><br>
+    <button>Save</button>
+</form>
+<ul>
+    <li>Tên sản phẩm 1: <span th:text="${product.name}"></span></li>
+    <li>Giá sản phẩm 1: <span th:text="${product.price}"></span></li>
+</ul>
+<ul th:object="${product}">
+    <li>Tên sản phẩm 2: <span th:text="*{name}"></span></li>
+    <li>Giá sản phẩm 2: <span th:text="*{price}"></span></li>
+</ul>
+<ul>
 
     <th:block th:each="item : ${items}">
         <li th:text="${item.name}"></li>
         <li th:text="${item.price}"></li>
     </th:block>
-  </ul>
+</ul>
 </body>
 </html>

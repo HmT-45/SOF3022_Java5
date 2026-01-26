@@ -6,21 +6,21 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="/product/save" method="post">
-        <label>Nhập tên sản phẩm <br>
-            <input name="name">
-        </label>
-        <br> <br>
+<form action="/product/save" method="post">
+    <label>Nhập tên sản phẩm <br>
+        <input name="name">
+    </label>
+    <br> <br>
 
-        <label>Nhập giá sản phẩm <br>
-            <input type="number" name="price">
-        </label>
-        <br><br>
-        <button>Save</button>
-    </form>
-    <ul>
-        <li>Tên sản phẩm: <span th:text="${name}"></span></li>
-        <li>Giá sản phẩm: <span th:text="${price}"></span></li>
-    </ul>
+    <label>Nhập giá sản phẩm <br>
+        <input type="number" name="price">
+    </label>
+    <br><br>
+    <button>Save</button>
+</form>
+<ul>
+    <li>Tên sản phẩm: <span th:text="${name}"></span></li>
+    <li>Giá sản phẩm: <span th:text="${price}"></span></li>
+</ul>
 </body>
 </html>

@@ -19,7 +19,7 @@ public class Bai2_ParamController {
             @PathVariable("x") String x,
             @RequestParam("y") String y,
             Model model
-    ){
+    ) {
         model.addAttribute("x", x);
         model.addAttribute("y", y);
         return "/lab2/bai2_form";

@@ -5,9 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-  <h2>DataBinding</h2>
-  <b th:text="${message}"></b>
-  <form th:object="${student}" action="/students/save" method="post">
+<h2>DataBinding</h2>
+<b th:text="${message}"></b>
+<form th:object="${student}" action="/students/save" method="post">
     Email: <br>
     <input th:field="*{id}"><i th:errors="*{id}"></i> <br>
     Fullname:<br>
@@ -25,6 +25,6 @@
     <input th:field="*{mark}"><i th:errors="*{mark}"></i>
     <br>
     <button>Save</button>
-  </form>
+</form>
 </body>
 </html>

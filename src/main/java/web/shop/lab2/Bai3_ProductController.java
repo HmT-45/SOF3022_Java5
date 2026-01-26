@@ -10,20 +10,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class Bai3_ProductController {
 
     @GetMapping("/product/form")
-    public String form(){
+    public String form() {
         return "/lab2/bai3_view";
     }
+
     @PostMapping("/product/save")
     public String save(
             @RequestParam("name") String name,
             @RequestParam("price") Integer price,
             Model model
-    ){
+    ) {
         model.addAttribute("name", name);
         model.addAttribute("price", price);
         return "/lab2/bai3_view";
     }
-
 
 
 }

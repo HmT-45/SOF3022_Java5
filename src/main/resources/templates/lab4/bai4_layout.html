@@ -8,15 +8,15 @@
     <h1 th:text="#{header.name}">Online Shopping</h1>
 </head>
 <body>
-    <header><h1>Online Shopping</h1></header>
-    <nav th:replace="~{/lab4/bai4_menu}">MENU</nav>
-    <article th:replace="${content}">CONTENT</article>
+<header><h1>Online Shopping</h1></header>
+<nav th:replace="~{/lab4/bai4_menu}">MENU</nav>
+<article th:replace="${content}">CONTENT</article>
 
-    <footer>
-        <hr>&copy;
-        <th:block th:utext="#{footer.copy}">
-            2024 by FPT Polytechnic. All rights reserved.
-        </th:block>
-    </footer>
+<footer>
+    <hr>&copy;
+    <th:block th:utext="#{footer.copy}">
+        2024 by FPT Polytechnic. All rights reserved.
+    </th:block>
+</footer>
 </body>
 </html>

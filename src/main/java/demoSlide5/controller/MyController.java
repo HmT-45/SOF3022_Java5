@@ -12,8 +12,8 @@ public class MyController {
     CookieService cookieService;
 
     @RequestMapping("/test/bean")
-    public String bean(){
-        cookieService.create("Tri", "hai muoi", (10*24*60*60) );
+    public String bean() {
+        cookieService.create("Tri", "hai muoi", (10 * 24 * 60 * 60));
         return null;
     }
 }

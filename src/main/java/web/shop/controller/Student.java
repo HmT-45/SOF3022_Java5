@@ -35,10 +35,10 @@ public class Student {
 
     @NotNull(message = "Chưa nhập hình ảnh")
     @Builder.Default
-    String photo ="photo.png";
+    String photo = "photo.png";
 
     @NotNull(message = "Chưa nhập điểm")
-    @Range(min=0, max=10, message = "Điểm phải từ 0-10")
+    @Range(min = 0, max = 10, message = "Điểm phải từ 0-10")
 
     private Double mark;
 }

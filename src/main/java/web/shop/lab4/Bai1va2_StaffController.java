@@ -15,6 +15,7 @@ public class Bai1va2_StaffController {
         model.addAttribute("message", "Vui lòng nhập thông tin nhân viên!");
         return "/lab4/bai1_staff-create";
     }
+
     @PostMapping("/staff/create/save")
     public String createSave(
             Model model,
@@ -27,6 +28,7 @@ public class Bai1va2_StaffController {
         model.addAttribute("message", "Xin chào " + staff.getFullname());
         return "/lab4/bai1_staff-create";
     }
+
     //Bài 2
     @GetMapping("/sx")
     public String validateForm(Model model) {
@@ -52,4 +54,4 @@ public class Bai1va2_StaffController {
         }
         return "/lab4/bai2_staff-validate";
     }
-    }
+}

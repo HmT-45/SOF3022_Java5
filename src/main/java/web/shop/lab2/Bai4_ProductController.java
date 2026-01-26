@@ -22,6 +22,7 @@ public class Bai4_ProductController {
 
         return "/lab2/bai4_view";
     }
+
     @PostMapping("/productbai4/save")
     public String save(@ModelAttribute("product") Bai3_Pruduct p, Model model) {
         model.addAttribute("product", p);

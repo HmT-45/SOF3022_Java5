@@ -10,6 +10,7 @@ public class Bai4_Controller {
     public String index(Model model) {
         return "/lab4/bai4_home";
     }
+
     @RequestMapping("/home/about")
     public String about(Model model) {
         return "/lab4/bai4_about";

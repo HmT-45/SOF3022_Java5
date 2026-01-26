@@ -5,13 +5,13 @@
     <title>Title</title>
 </head>
 <body>
-    <h1 th:fragments="frag1">Fragment 1</h1>
-    <h2 th:fragments="frag2">Fragment 2</h2>
-    <div th:fragment="frag(x,y)">
-        <div th:replace="${x}"></div>
-        <hr>
-        <div th:replace="${y}"></div>
+<h1 th:fragments="frag1">Fragment 1</h1>
+<h2 th:fragments="frag2">Fragment 2</h2>
+<div th:fragment="frag(x,y)">
+    <div th:replace="${x}"></div>
+    <hr>
+    <div th:replace="${y}"></div>
 
-    </div>
+</div>
 </body>
 </html>

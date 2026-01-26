@@ -23,6 +23,7 @@ public class MessageConfig implements WebMvcConfigurer {
         ms.setDefaultEncoding("utf-8");
         return ms;
     }
+
     @Bean("localeResolver")
     public LocaleResolver getLocaleResolver() {
         CookieLocaleResolver localeResolver = new
@@ -32,6 +33,7 @@ public class MessageConfig implements WebMvcConfigurer {
         localeResolver.setDefaultLocale(new Locale("vi"));
         return localeResolver;
     }
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         LocaleChangeInterceptor interceptor

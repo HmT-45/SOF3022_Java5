@@ -10,24 +10,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class Bai1_OkController {
 
     @RequestMapping("/ok")
-    public String ok(){
+    public String ok() {
         return "/lab2/ok";
     }
 
     @PostMapping("/ctrl/ok")
-    public String m1(Model model){
+    public String m1(Model model) {
         model.addAttribute("method", "m1");
         return "/lab2/ok";
     }
 
     @GetMapping("/ctrl/ok")
-    public String m2(Model model){
+    public String m2(Model model) {
         model.addAttribute("method", "m2");
         return "/lab2/ok";
     }
 
-    @PostMapping(value="/ctrl/ok", params ="x")
-    public String m3(Model model){
+    @PostMapping(value = "/ctrl/ok", params = "x")
+    public String m3(Model model) {
         model.addAttribute("method", "m3");
         return "/lab2/ok";
     }

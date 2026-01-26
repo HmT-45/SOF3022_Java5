@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class DataBindingController {
     @GetMapping("/student/form")
-    public String showForm(Model model, @ModelAttribute("student") Student student){
+    public String showForm(Model model, @ModelAttribute("student") Student student) {
         model.addAttribute("message", "Enter student info please!");
         return "/demo/student";
     }
+
     @PostMapping("/student/save")
-    public String saveStudent(Model model, @ModelAttribute("student") Student student){
+    public String saveStudent(Model model, @ModelAttribute("student") Student student) {
         model.addAttribute("message", "Student save sucessfully!");
         return "/demo/student";
     }

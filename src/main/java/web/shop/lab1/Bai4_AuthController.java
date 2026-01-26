@@ -15,21 +15,21 @@ public class Bai4_AuthController {
 
     // phương thức hiển thị form
     @GetMapping("/login/form")
-    public String form(){
+    public String form() {
         return "/lab1/form";
     }
 
     // phương thức xử lý đăng nhập
     @PostMapping("/login/check")
-    public String login(Model model){
+    public String login(Model model) {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String hello = request.getParameter("hello");
 
-        if("poly".equals(username) & "123".equals(password)){
+        if ("poly".equals(username) & "123".equals(password)) {
             model.addAttribute("message", "Dang nhap thanh cong");
             model.addAttribute("hello", "Poly Hello");
-        }else{
+        } else {
             model.addAttribute("message", "Dang nhap that bai");
         }
         return "/lab1/form";
