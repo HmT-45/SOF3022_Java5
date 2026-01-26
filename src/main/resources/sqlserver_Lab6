@@ -1,0 +1,60 @@
+CREATE DATABASE WebShop;
+GO
+USE WebShop;
+GO
+
+CREATE TABLE Categories (
+    Id NVARCHAR(50) PRIMARY KEY,
+    Name NVARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Accounts (
+    Username NVARCHAR(50) PRIMARY KEY,
+    Password NVARCHAR(255) NOT NULL,
+    Fullname NVARCHAR(255),
+    Email NVARCHAR(255),
+    Photo NVARCHAR(255),
+    Activated BIT,
+    Admin BIT
+);
+
+CREATE TABLE Products (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(255) NOT NULL,
+    Image NVARCHAR(255),
+    Price FLOAT,
+    Createdate DATE DEFAULT GETDATE(),
+    Available BIT,
+    Categoryid NVARCHAR(50),
+
+    CONSTRAINT FK_Product_Category
+        FOREIGN KEY (Categoryid)
+        REFERENCES Categories(Id)
+);
+
+CREATE TABLE Orders (
+    Id BIGINT IDENTITY(1,1) PRIMARY KEY,
+    Address NVARCHAR(255),
+    Createdate DATE DEFAULT GETDATE(),
+    Username NVARCHAR(50),
+
+    CONSTRAINT FK_Order_Account
+        FOREIGN KEY (Username)
+        REFERENCES Accounts(Username)
+);
+
+CREATE TABLE Orderdetails (
+    Id BIGINT IDENTITY(1,1) PRIMARY KEY,
+    Price FLOAT,
+    Quantity INT,
+    Productid INT,
+    Orderid BIGINT,
+
+    CONSTRAINT FK_OrderDetail_Product
+        FOREIGN KEY (Productid)
+        REFERENCES Products(Id),
+
+    CONSTRAINT FK_OrderDetail_Order
+        FOREIGN KEY (Orderid)
+        REFERENCES Orders(Id)
+);

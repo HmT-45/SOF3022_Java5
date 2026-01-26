@@ -1,0 +1,29 @@
+<div th:fragment="table">
+    <table class="table table-bordered table-hover align-middle">
+        <thead class="table-dark">
+        <tr>
+            <th style="width:20%">ID</th>
+            <th>Name</th>
+            <th style="width:20%">Action</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="c : ${items}">
+            <td th:text="${c.id}"></td>
+            <td th:text="${c.name}"></td>
+            <td>
+                <a th:href="@{/category/edit/{id}(id=${c.id})}"
+                   class="btn btn-sm btn-warning">
+                    Edit
+                </a>
+                <a th:href="@{/category/delete/{id}(id=${c.id})}"
+                   class="btn btn-sm btn-danger"
+                   onclick="return confirm('Delete this category?')">
+                    Delete
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

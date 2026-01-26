@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Category Management</title>
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+</head>
+<body class="bg-light">
+
+<div class="container mt-4">
+    <h3 class="mb-3 text-primary">CATEGORY MANAGEMENT</h3>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <th:block th:replace="lab6/form :: form"/>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <th:block th:replace="lab6/table :: table"/>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
