@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Sort</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+    th a { text-decoration: none; color: black; }
+    th.active { background: #f0f0f0; }
+    th span { margin-left: 5px; }
+  </style>
+</head>
+<body>
+
+<h3>
+  SORT BY:
+  <b th:text="${field.toUpperCase()}"></b>
+  (<span th:text="${dir}"></span>)
+</h3>
+
+<table>
+  <tr>
+    <th th:classappend="${field=='id'} ? 'active'">
+      <a th:href="@{/product/sort(field='id',dir=${field=='id' and dir=='asc'?'desc':'asc'})}">
+        ID <span th:text="${field=='id' ? (dir=='asc'?'↑':'↓') : ''}"></span>
+      </a>
+    </th>
+
+    <th th:classappend="${field=='name'} ? 'active'">
+      <a th:href="@{/product/sort(field='name',dir=${field=='name' and dir=='asc'?'desc':'asc'})}">
+        Name <span th:text="${field=='name' ? (dir=='asc'?'↑':'↓') : ''}"></span>
+      </a>
+    </th>
+
+    <th th:classappend="${field=='price'} ? 'active'">
+      <a th:href="@{/product/sort(field='price',dir=${field=='price' and dir=='asc'?'desc':'asc'})}">
+        Price <span th:text="${field=='price' ? (dir=='asc'?'↑':'↓') : ''}"></span>
+      </a>
+    </th>
+
+    <th th:classappend="${field=='createDate'} ? 'active'">
+      <a th:href="@{/product/sort(field='createDate',dir=${field=='createDate' and dir=='asc'?'desc':'asc'})}">
+        Date <span th:text="${field=='createDate' ? (dir=='asc'?'↑':'↓') : ''}"></span>
+      </a>
+    </th>
+  </tr>
+
+  <tr th:each="item : ${items}">
+    <td th:text="${item.id}"></td>
+    <td th:text="${item.name}"></td>
+    <td th:text="${#numbers.formatDecimal(item.price,1,2)}"></td>
+    <td th:text="${#dates.format(item.createDate,'dd/MM/yyyy')}"></td>
+  </tr>
+</table>
+
+</body>
+</html>
