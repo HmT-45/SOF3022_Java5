@@ -1,4 +1,4 @@
-package web.shop.lab6.bai1_2.controller;
+package web.shop.lab6.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
@@ -6,11 +6,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import web.shop.lab6.bai1_2.Repository.ProductDAO;
-import web.shop.lab6.bai1_2.model.Product;
+import web.shop.lab6.Repository.ProductDAO;
+import web.shop.lab6.model.Product;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class ProductController {
