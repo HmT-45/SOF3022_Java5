@@ -1,4 +1,4 @@
-package web.shop.lab6.model;
+package web.shop.lab6va7.model;
 
 import jakarta.persistence.*;
 import lombok.Data;

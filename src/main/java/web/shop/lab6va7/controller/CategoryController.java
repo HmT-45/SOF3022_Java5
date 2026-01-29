@@ -1,12 +1,12 @@
-package web.shop.lab6.controller;
+package web.shop.lab6va7.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import web.shop.lab6.Repository.CategoryDAO;
-import web.shop.lab6.model.Category;
+import web.shop.lab6va7.Repository.CategoryDAO;
+import web.shop.lab6va7.model.Category;
 
 @Controller
 @RequestMapping("/category")

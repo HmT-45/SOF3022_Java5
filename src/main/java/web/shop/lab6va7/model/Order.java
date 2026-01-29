@@ -1,8 +1,9 @@
-package web.shop.lab6.model;
+package web.shop.lab6va7.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
 import jakarta.persistence.Id;
+
 
 import java.io.Serializable;
 import java.util.Date;
@@ -10,20 +11,17 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "Products")
-public class Product implements Serializable {
+@Table(name = "Orders")
+public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
-    String name;
-    String image;
-    Double price;
+    Long id;
+    String address;
     @Temporal(TemporalType.DATE)
     @Column(name = "Createdate")
     Date createDate = new Date();
-    Boolean available;
-    @ManyToOne @JoinColumn(name = "Categoryid")
-    Category category;
-    @OneToMany(mappedBy = "product")
+    @ManyToOne @JoinColumn(name = "Username")
+    Account account;
+    @OneToMany(mappedBy = "order")
     List<OrderDetail> orderDetails;
 }

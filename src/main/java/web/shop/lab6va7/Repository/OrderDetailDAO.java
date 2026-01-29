@@ -1,6 +1,6 @@
-package web.shop.lab6.Repository;
+package web.shop.lab6va7.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import web.shop.lab6.model.OrderDetail;
+import web.shop.lab6va7.model.OrderDetail;
 
 public interface OrderDetailDAO extends JpaRepository<OrderDetail, Long> {}
