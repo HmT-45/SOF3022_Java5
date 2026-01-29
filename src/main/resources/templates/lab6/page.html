@@ -66,6 +66,13 @@
             </a>
         </th>
 
+        <th th:classappend="${field=='category'} ? 'active'">
+            <a th:href="@{/product/page(p=${page.number},size=${size},
+             field='category',dir=${field=='category' and dir=='asc'?'desc':'asc'})}">
+                Category
+            </a>
+        </th>
+
         <th th:classappend="${field=='price'} ? 'active'">
             <a th:href="@{/product/page(p=${page.number},size=${size},
                      field='price',dir=${field=='price' and dir=='asc'?'desc':'asc'})}">
@@ -86,6 +93,7 @@
     <tr th:each="item : ${page.content}">
         <td th:text="${item.id}"></td>
         <td th:text="${item.name}"></td>
+        <td th:text="${item.category.name}"></td>
         <td th:text="${#numbers.formatDecimal(item.price,0,'COMMA',0,'POINT')} + ' ₫'"></td>
         <td th:text="${#dates.format(item.createDate,'dd/MM/yyyy')}"></td>
     </tr>

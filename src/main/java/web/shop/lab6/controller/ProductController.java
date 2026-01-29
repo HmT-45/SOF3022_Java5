@@ -48,7 +48,7 @@ public class ProductController {
 
         Page<Product> page;
 
-        // 👉 ALL
+        //ALL
         if (size == -1) {
             List<Product> list = dao.findAll(Sort.by(direction, field));
             page = new PageImpl<>(
